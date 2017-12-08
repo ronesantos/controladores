@@ -1,11 +1,12 @@
 CC :=gcc
-CFLAGS := -g -Wall
+CFLAGS := -g -Wall -pthread 
 
-TARGET := joystick
+TARGET := main
 all: $(TARGET)
 
-joystick: joystick.c
-	$(CC) $(CFLAGS) joystick.c -o joystick
+main: main.c joystick.h
+	$(CC) $(CFLAGS) main.c -o main
+
 
 clean:
-	rm joystick
+	rm -rf main 
